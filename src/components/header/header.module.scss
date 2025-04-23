@@ -1,0 +1,30 @@
+@use "@/styles/colors";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 200px 50px 50px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  span {
+    font-size: 25px;
+    font-weight: 600;
+    color: colors.$blue-100;
+    margin-left: 20px;
+  }
+}
+
+.productName {
+  display: flex;
+  align-items: center;
+
+  &_asterisk {
+    text-align: center;
+    font-size: 30px;
+    margin: 10px 10px 0 0;
+  }
+}
