@@ -2,7 +2,7 @@ import Image from "next/image";
 import logoImg from "../../../public/icon.svg";
 import styles from "./login-header.module.scss";
 
-export default function Header() {
+export default function LoginHeader() {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
