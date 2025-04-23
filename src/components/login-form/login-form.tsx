@@ -1,7 +1,7 @@
 import Image from "next/image";
 import loginAccessImg from "../../../public/loginAccess.png";
-import styles from "./loginForm.module.scss";
-import { GoogleAuthButton } from "../googleAuthButton/googleAuthButton";
+import styles from "./login-form.module.scss";
+import { GoogleAuthButton } from "../google-auth-button/google-auth-button";
 
 export default async function LoginForm() {
   return (
