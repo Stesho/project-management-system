@@ -1,14 +1,11 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { Header } from "@/components/header/header";
 
-export default async function Home() {
+export default async function HomePage() {
   const session = await getServerSession(authOptions);
   const { user } = session || {};
 
-  return (
-    <div>
-      <Header name={user?.name || ""} avatarUrl={user?.image || ""} />
-    </div>
-  );
+  console.log(user);
+
+  return <div>Home</div>;
 }
