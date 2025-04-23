@@ -5,28 +5,41 @@ import TasksImg from "../.../../../../public/menu/tasks.svg";
 import WorkLogsImg from "../.../../../../public/menu/work-logs.svg";
 import PerfomanceImg from "../.../../../../public/menu/perfomance.svg";
 import SettingsImg from "../.../../../../public/menu/settings.svg";
+import { Routes } from "@/constants/routing";
 
 export function Menu() {
   return (
     <nav>
       <ul className="w-78.5 p-4 pr-[30]">
-        <MenuLink href="/projects" iconSrc={ProjectsImg} alt="projects menu">
+        <MenuLink
+          href={Routes.projects}
+          iconSrc={ProjectsImg}
+          alt="projects menu"
+        >
           Projects
         </MenuLink>
-        <MenuLink href="/tasks" iconSrc={TasksImg} alt="tasks menu">
+        <MenuLink href={Routes.tasks} iconSrc={TasksImg} alt="tasks menu">
           Tasks
         </MenuLink>
-        <MenuLink href="/tasks" iconSrc={WorkLogsImg} alt="work logs menu">
+        <MenuLink
+          href={Routes.workLogs}
+          iconSrc={WorkLogsImg}
+          alt="work logs menu"
+        >
           Work Logs
         </MenuLink>
         <MenuLink
-          href="/perfomance"
+          href={Routes.perfomance}
           iconSrc={PerfomanceImg}
           alt="perfomance menu"
         >
           Perfomance
         </MenuLink>
-        <MenuLink href="/settings" iconSrc={SettingsImg} alt="settings menu">
+        <MenuLink
+          href={Routes.settings}
+          iconSrc={SettingsImg}
+          alt="settings menu"
+        >
           Settings
         </MenuLink>
       </ul>
