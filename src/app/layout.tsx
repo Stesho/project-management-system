@@ -1,6 +1,8 @@
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 
+import "@/styles/global.css";
+
 export const metadata: Metadata = {
   title: "Project Management System",
   description: "Project Management System",
