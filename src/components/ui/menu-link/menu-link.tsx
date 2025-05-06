@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface MenuLinkProps {
   href: string;
@@ -9,9 +12,16 @@ interface MenuLinkProps {
 }
 
 export function MenuLink({ href, iconSrc, alt, children }: MenuLinkProps) {
+  const pathname = usePathname();
+
   return (
     <li className="mb-2">
-      <Link href={href} className="flex px-4 py-2 hover:bg-sky-100 rounded-[4]">
+      <Link
+        href={href}
+        className={`flex px-4 py-2 hover:bg-sky-100 rounded-[4] ${
+          pathname === href ? "bg-sky-100" : ""
+        }`}
+      >
         <Image src={iconSrc} alt={alt} />
         <span className="ml-[10]">{children}</span>
       </Link>

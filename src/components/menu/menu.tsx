@@ -9,7 +9,7 @@ import { Routes } from "@/constants/routing";
 
 export function Menu() {
   return (
-    <nav>
+    <nav className="shadow-2xl">
       <ul className="w-78.5 p-4 pr-[30]">
         <MenuLink
           href={Routes.projects}
