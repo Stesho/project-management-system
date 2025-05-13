@@ -7,7 +7,6 @@ import { formatDeadline } from "@/libs/format";
 import { Task } from "@/types/task";
 import { User } from "@/types/user";
 import { Routes } from "@/constants/routing";
-import { getShiftMap } from "@/libs/styles";
 
 interface ProjectCardProps {
   id: string;
@@ -18,7 +17,7 @@ interface ProjectCardProps {
 }
 
 const maxPersonImages = 4;
-const shift = getShiftMap(maxPersonImages + 1);
+const shift = ["right-0", "right-2", "right-4", "right-6", "right-8"];
 
 export function ProjectCard({
   id,
@@ -51,12 +50,12 @@ export function ProjectCard({
               height={35}
               src={imageSrc}
               alt={`${firstName} ${lastName}`}
-              className={`relative size-[35] rounded-full border border-white ${shift[index]}`}
+              className={`relative size-9 rounded-full border border-white ${shift[index]}`}
             />
           ))}
           {team.length > maxPersonImages && (
             <div
-              className={`flex items-center justify-center relative size-[35] rounded-full bg-red-200 border border-white ${shift[maxPersonImages]}`}
+              className={`relative flex items-center justify-center size-9 text-red-700 bg-red-200 border border-white rounded-full ${shift[maxPersonImages]}`}
             >
               +{team.length - maxPersonImages}
             </div>
