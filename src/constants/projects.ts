@@ -13,6 +13,7 @@ export const PROJECTS = [...new Array(10)].map((_, index) => ({
     endDate: "2025-02-02 15:48:39.768",
     status: Status.completed,
     performer: {
+      id: `${index}`,
       firstName: "First",
       lastName: "Last",
       email: "email@gmail.com",
