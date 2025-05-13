@@ -13,13 +13,14 @@ interface MenuLinkProps {
 
 export function MenuLink({ href, iconSrc, alt, children }: MenuLinkProps) {
   const pathname = usePathname();
+  const isActive = pathname.includes(href);
 
   return (
     <li className="mb-2">
       <Link
         href={href}
         className={`flex px-4 py-2 hover:bg-sky-100 rounded-[4] ${
-          pathname === href ? "bg-sky-100" : ""
+          isActive ? "bg-sky-100" : ""
         }`}
       >
         <Image src={iconSrc} alt={alt} />
