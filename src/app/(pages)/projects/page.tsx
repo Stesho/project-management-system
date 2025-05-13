@@ -1,3 +1,10 @@
+import { ProjectsList } from "@/components/projects-list/projects-list";
+
 export default function ProjectsPage() {
-  return <div>Projects</div>;
+  return (
+    <section>
+      <h2 className="text-3xl mb-8">Projects</h2>
+      <ProjectsList />
+    </section>
+  );
 }

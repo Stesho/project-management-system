@@ -1,4 +1,3 @@
-import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 
 import "@/styles/global.css";
@@ -8,10 +7,6 @@ export const metadata: Metadata = {
   description: "Project Management System",
 };
 
-const inter = Inter({
-  weight: ["400", "700", "800"],
-});
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -19,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

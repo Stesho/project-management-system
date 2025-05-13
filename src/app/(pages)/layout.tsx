@@ -14,9 +14,9 @@ export default async function PagesLayout({ children }: PagesLayoutProps) {
   return (
     <>
       <Header name={user?.name || ""} avatarUrl={user?.image || ""} />
-      <div className="flex min-h-screen">
+      <div className="flex min-h-screen pt-[90]">
         <Menu />
-        <main className="w-full bg-blue-50">{children}</main>
+        <main className="w-full bg-blue-50 p-8">{children}</main>
       </div>
     </>
   );

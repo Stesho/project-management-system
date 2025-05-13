@@ -8,7 +8,7 @@ interface HeaderProps {
 
 export function Header({ name, avatarUrl }: HeaderProps) {
   return (
-    <header className="shadow-lg">
+    <header className="fixed w-full shadow-lg bg-white z-1">
       <div className="container flex justify-between py-5">
         <div className="flex items-center">
           <Image src={logoImg} alt="logo" width={50} height={45} />
