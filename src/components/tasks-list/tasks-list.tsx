@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { Task } from "@/types/task";
-import { StatusBar } from "@/components/ui/status-bar/status-bar";
 import { formatDate } from "@/libs/format";
 import IdeaImg from "../../../public/idea.png";
 import CalendarImg from "../../../public/calendar.svg";
 import CommentImg from "../../../public/comment.png";
+import { TaskStatusBar } from "../ui/status-bar/task-status-bar";
 
 interface TasksListProps {
   tasks: Task[];
@@ -30,14 +30,14 @@ export function TasksList({ tasks }: TasksListProps) {
             </div>
             <div>
               <h3 className="font-bold text-base">{title}</h3>
-              <div className="flex">
-                <div className="text-sm">
+              <div className="flex items-center">
+                <div className="text-sm mr-3">
                   #{id} Opened 10 days ago by{" "}
                   <span className="font-bold">
                     {performer.firstName} {performer.lastName}
                   </span>
                 </div>
-                <StatusBar status={status} />
+                <TaskStatusBar status={status} />
               </div>
             </div>
           </div>
