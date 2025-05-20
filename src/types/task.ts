@@ -10,3 +10,8 @@ export interface Task {
   endDate: string;
   description: string;
 }
+
+export enum Views {
+  board = "board",
+  list = "list",
+}
