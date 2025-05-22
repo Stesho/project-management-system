@@ -26,7 +26,7 @@ export function TasksViewSelect({ id, view }: TasksViewSelectProps) {
 
   return (
     <Select value={view} onValueChange={handleViewChange}>
-      <SelectTrigger className="capitalize text-lg p-4 shadow-md cursor-pointer">
+      <SelectTrigger className="capitalize text-lg p-4 shadow-md">
         <SelectValue>
           <Image src={NotebookImg} height={16} width={16} alt="notebook" />
           <span>{view} view</span>
@@ -34,11 +34,7 @@ export function TasksViewSelect({ id, view }: TasksViewSelectProps) {
       </SelectTrigger>
       <SelectContent>
         {Object.values(Views).map((view) => (
-          <SelectItem
-            key={view}
-            value={view}
-            className="capitalize text-lg cursor-pointer"
-          >
+          <SelectItem key={view} value={view} className="capitalize text-lg">
             {view} view
           </SelectItem>
         ))}
