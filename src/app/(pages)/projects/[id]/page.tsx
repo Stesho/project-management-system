@@ -1,10 +1,9 @@
-import { PROJECTS } from "@/constants/projects";
-import { TasksList } from "@/components/tasks-list/tasks-list";
-
 import { redirect } from "next/navigation";
+import { PROJECTS, Views } from "@/constants/projects";
+import { TasksList } from "@/components/tasks-list/tasks-list";
 import { TasksViewSelect } from "@/components/tasks-view-select/tasks-view-select";
-import { Views } from "@/types/task";
 import { Routes } from "@/constants/routing";
+import { TasksBoard } from "@/components/tasks-board/tasks-board";
 
 interface ProjectLayoutProps {
   params: Promise<{ id: string }>;
@@ -26,7 +25,11 @@ export default async function ProjectLayout({
   }
 
   const renderTasksView = () =>
-    view === Views.list ? <TasksList tasks={tasks} /> : <div>Board</div>;
+    view === Views.list ? (
+      <TasksList tasks={tasks} />
+    ) : (
+      <TasksBoard tasks={tasks} />
+    );
 
   return (
     <section>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import {
   Select,
@@ -8,8 +9,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select/select";
-import { Views } from "@/types/task";
+import { Views } from "@/constants/projects";
 import { Routes } from "@/constants/routing";
+import NotebookImg from "../../../public/notebook.svg";
 
 interface TasksViewSelectProps {
   id: string;
@@ -24,12 +26,19 @@ export function TasksViewSelect({ id, view }: TasksViewSelectProps) {
 
   return (
     <Select value={view} onValueChange={handleViewChange}>
-      <SelectTrigger className="capitalize">
-        <SelectValue>{view} view</SelectValue>
+      <SelectTrigger className="capitalize text-lg p-4 shadow-md cursor-pointer">
+        <SelectValue>
+          <Image src={NotebookImg} height={16} width={16} alt="notebook" />
+          <span>{view} view</span>
+        </SelectValue>
       </SelectTrigger>
       <SelectContent>
-        {Object.keys(Views).map((view) => (
-          <SelectItem key={view} value={view} className="capitalize">
+        {Object.values(Views).map((view) => (
+          <SelectItem
+            key={view}
+            value={view}
+            className="capitalize text-lg cursor-pointer"
+          >
             {view} view
           </SelectItem>
         ))}

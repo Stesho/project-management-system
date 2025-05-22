@@ -1,5 +1,6 @@
 import { Status } from "@/constants/status";
 import { User } from "./user";
+import { Comment } from "./comment";
 
 export interface Task {
   id: string;
@@ -9,9 +10,5 @@ export interface Task {
   startDate: string;
   endDate: string;
   description: string;
-}
-
-export enum Views {
-  board = "board",
-  list = "list",
+  comments: Comment[];
 }
